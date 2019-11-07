@@ -14,9 +14,8 @@
       let start = 0
       return function(...args) {
         console.log('throttle()-----')
-      let current = Date.now()
-        if (current-start >time) {
-
+        let current = Date.now()
+      if (current-start >time) {
           callback.apply(this,args)
           start = current
           
@@ -28,11 +27,11 @@
       return function (...args) {
       console.log('debounce()')
       if (callback.timeId) {
-      clearTimeout(callback.timeId)  
+        clearTimeout(callback.timeId)  
       }
       callback.timeId =  setTimeout(() => {
-      callback.apply(this,args)
-      delete callback.timeId
+        callback.apply(this,args)
+        delete callback.timeId
      }, time);
       
         
